@@ -10,6 +10,7 @@ import { asyncHandler } from "./middlewares/asyncHandler.middleware";
 import { connectDatabase } from "./config/database.config";
 import { toNodeHandler } from "better-auth/node";
 import { getAuth } from "./lib/auth";
+import routes from "./routes"
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.get("/health", asyncHandler(async (req: Request, res: Response) => {
 
 }))
 
+app.use("/api", routes)
 app.use(errorHandler)
 
 app.listen(Env.PORT, async () => {

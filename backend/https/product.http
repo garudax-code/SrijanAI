@@ -1,0 +1,5 @@
+// Get all products
+GET http://localhost:8000/api/product/all
+
+// Get single product by id
+GET http://localhost:8000/api/product/69e2768ff7d008b0ed71eb17
